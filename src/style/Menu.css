@@ -1,0 +1,28 @@
+.Menu {
+    display: flex;
+    margin-top: 40px;
+}
+
+.Menu > .logo {
+    flex: 0 1 auto;
+}
+
+.Menu > .links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.Menu > .links > div {
+    margin-left: 57px;
+    line-height: 142.6%;
+    text-align: right;
+}
+
+.Menu > .links > div > a {
+    color: #FF6060;
+    text-decoration-line: underline;
+    font-style: normal;
+    font-size: 24px;
+}
