@@ -1,0 +1,73 @@
+.CarouselLogement {
+    margin: 0px 100px;
+    display: flex;
+}
+.CarouselImg {
+    touch-action: none;
+    border-radius: 25px;
+    max-height: 415px;
+    margin-bottom: 20px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    white-space: nowrap;
+    z-index: 1;
+    caret-color: transparent;
+}
+
+.CarouselImg::-webkit-scrollbar {
+    display: none;
+}
+
+.LeftArrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(150%);
+    height: 80px;
+    width: 46px;
+    /* background-color: black; */
+    bottom: 40%;
+    left: 8%;
+    color: #000;
+    cursor: pointer;
+    user-select: none;
+}
+
+.LeftArrow:hover {
+    color: #bbccdd;
+}
+
+.LeftArrow:active {
+    color: #206ebd;
+}
+
+.RightArrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(150%);
+    height: 80px;
+    width: 46px;
+    /* background-color: black; */
+    bottom: 40%;
+    right: 8%;
+    color: #000;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.RightArrow:hover {
+    color: #bbccdd
+}
+
+.RightArrow:active {
+    color: #206ebd
+}
+
+.logementImg{
+    width: 100%;
+    height: 415px;
+    border-radius: 25px;
+    object-fit: cover;
+}

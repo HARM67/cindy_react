@@ -1,26 +1,27 @@
-.Menu {
+.header {
     display: flex;
-    margin-top: 40px;
+    margin: 40px 100px;
+    height: 68px;
 }
 
-.Menu > .logo {
+.header > .logo_header {
     flex: 0 1 auto;
 }
 
-.Menu > .links {
+.header > .header_links {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-.Menu > .links > div {
+.header > .header_links > div {
     margin-left: 57px;
     line-height: 142.6%;
     text-align: right;
 }
 
-.Menu > .links > div > a {
+.header > .header_links > div > a {
     color: #FF6060;
     text-decoration-line: underline;
     font-style: normal;
