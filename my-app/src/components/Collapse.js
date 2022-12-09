@@ -4,10 +4,9 @@ import { useState } from "react";
 
 const Collapse = ({ title, description }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const ChevronUp = <img src={Chevron} alt="Fleche" className="fleche" />;
-  const ChevronDown = (
-    <img src={Chevron} alt="Fleche" className="fleche  fleche-down" />
-  );
+  const ChevronUp = <img src={Chevron} alt="Fleche" className="fleche-up" />;
+  const ChevronDown = <img src={Chevron} alt="Fleche" className="fleche-down" />
+  ;
 
   return !isOpen ? (
     <div className="collapse">
@@ -22,7 +21,9 @@ const Collapse = ({ title, description }) => {
         {title}
         {ChevronUp}
       </button>
-      <p className="collapse-description">{description}</p>
+      <div className="collapse-texte">
+        <p className="collapse-description">{description}</p>
+      </div>
     </div>
   );
 };

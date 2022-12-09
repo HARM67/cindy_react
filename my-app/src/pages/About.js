@@ -8,7 +8,7 @@ import Collapse from "../components/Collapse";
 export function About() {
   UseTitle("A propos");
   return (
-    <div>
+    <div className="about">
       <Banner BannerImg={BannerImg} alt="Bannière montagne enneigé" />
       <Collapse
         title="Fiabilité"

@@ -1,14 +1,15 @@
+.Accueil{
+    margin: 30px 100px 0px 100px;
+}
 .Accueil .banner {
     position: relative;
     height: 223px;
     border-radius: 25px;
     color:white;
-    font-size: 48px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 30px 100px 0px 100px;
     background-size: cover;
 }
 
@@ -25,4 +26,31 @@
 
 .Accueil .banner .textBanner {
     z-index: 1;
+    margin: 0;
+    font-size: 48px;
+}
+
+@media only screen and (max-width: 992px){
+    .Accueil .banner .textBanner {
+        font-size: 38px;
+    }
+    .Accueil {
+        margin: 0px 40px 0px 40px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+
+    .Accueil {
+        margin: 0px 20px 0px 20px;
+    }
+    .Accueil .banner {
+        height: 111px;
+    }
+    .Accueil .banner .textBanner {
+        font-size: 24px;
+        margin: 0px 20px 0px 20px;
+
+    }
+
 }

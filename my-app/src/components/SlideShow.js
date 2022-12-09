@@ -1,68 +1,67 @@
-import { useState } from "react";
-import lodging from "../data/logements.json";
+import Arrow from "../assets/FlecheDroite.svg";
+
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import LeftArrow from "../assets/FlecheGauche.svg";
-import RightArrow from "../assets/FlecheDroite.svg";
+import lodging from "../data/logements.json";
 import "../style/SlideShow.css";
 
-function SlideShow(props) {
-
-  const { children } = lodging;
-  const [sliderPosition, setSliderPosition] = useState(0);
-
+function SlideShow() {
   const paramsId = useParams();
-  //   console.log(paramsId);
-  const selectedLogement = lodging.find(
-    (Logement) => Logement.id === paramsId.id
-  );
-
-  const pictures = selectedLogement.pictures;
-  const titleLogement = selectedLogement.title;
-
-  //   let isOne = false;
-  //   if (length === 1) {
-  //     isOne = true;
-
-  const prev = () => {
-    let newPosition = sliderPosition;
-    if (newPosition > 0) {
-      newPosition = newPosition - 1;
-    }
-    setSliderPosition(newPosition);
-  };
-
+  const lodgingFind = lodging.find((object) => object.id === paramsId.id);
+  console.log("SlideShow", lodgingFind);
+  const pictures = lodgingFind.pictures;
+  console.log("les photos", pictures);
+  const [current, setCurrent] = useState(0);
+  // //   Si la diapositive actuelle est la dernière diapositive, passez à la première diapositive, sinon passez à la suivante faire glisser.
   const next = () => {
-    let newPosition = sliderPosition;
-    if (newPosition < children.length - 1) {
-      newPosition = newPosition + 1;
-    }
-    setSliderPosition(newPosition);
+    setCurrent(current === pictures.length - 1 ? 0 : current + 1);
   };
+
+  //   /**
+  //    * Si la diapositive actuelle est la première diapositive, réglez la diapositive actuelle sur la dernière diapositive, sinon
+  //    * définir la diapositive actuelle sur la diapositive précédente.
+  const prev = () => {
+    setCurrent(current === 0 ? pictures.length - 1 : current - 1);
+  };
+
+  let onePicture = false;
+  if (pictures.length === 1) {
+    onePicture = true;
+  }
+
   return (
-    <section className="CarouselLogement">
-      <img
-        className="LeftArrow"
-        src={LeftArrow}
-        alt="flèche gauche"
-        onClick={prev}
-      />
-      <img
-        className="RightArrow"
-        src={RightArrow}
-        alt="flèche droite"
-        onClick={next}
-      />
-      <article className="CarouselImg">
-        {pictures.map((picture, index) => (
-          <img
-            key={`CarouselPicutre${index}`}
-            src={picture}
-            alt={`logement ${titleLogement}`}
-            className="logementImg"
-          />
-        ))}
-      </article>
-    </section>
+    <div className="slider">
+      <div className="fleches">
+        <img
+          src={Arrow}
+          alt="fleche"
+          onClick={prev}
+          className={onePicture ? "CarouselNone" : "left"}
+        />
+        <img
+          src={Arrow}
+          alt="fleche"
+          onClick={next}
+          className={onePicture ? "CarouselNone" : "right"}
+        />
+      </div>
+      {pictures.map((img, index) => {
+        return (
+          <div key={index}>
+            {index === current && (
+              <img
+                src={img}
+                alt="Photos du logement"
+                className="slider-image"
+              />
+            )}
+          </div>
+        );
+      })}
+      <p className={onePicture ? "imageNumberNone" : "imageNumber"}>
+        {current + 1}/{pictures.length}
+      </p>
+    </div>
   );
 }
 

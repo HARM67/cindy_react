@@ -1,4 +1,3 @@
-import "./style/App.css";
 import { React } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -16,8 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/lodging/:id" element={<Lodging />} />
-        <Route path="/lodging/*" element={<Error />} />
-        <Route path="*" element={<Error />} />
+        <Route path="/*" element={<Error />} />
       </Routes>
       <Footer />
     </div>

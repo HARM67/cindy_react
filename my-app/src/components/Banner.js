@@ -6,7 +6,7 @@ function Banner(props) {
         style={{ backgroundImage: `url(${props.BannerImg})` }}
       >
         <div className="mask"></div>
-        <div className="textBanner">{props.textBanner}</div>
+        <h1 className="textBanner">{props.textBanner}</h1>
       </div>
       {props.children}
     </div>

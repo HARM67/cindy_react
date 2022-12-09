@@ -27,3 +27,45 @@
     font-style: normal;
     font-size: 24px;
 }
+
+@media only screen and (max-width: 992px){
+    .header{
+        margin: 30px 40px;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+
+.header{
+    margin: 20px 20px;
+    align-items: center;
+}
+
+.header .logo_header{
+    height: 45px;
+    max-width: 150px;
+    width: 50%;
+}
+
+.header > .header_links > div > a {
+    text-transform: uppercase;
+    font-size: 12px;}
+    
+}
+
+@media only screen and (max-width: 424px){
+
+    .header > .header_links {
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.header > .header_links > div {
+    margin: 0;
+}
+.header > .header_links {
+    align-items: flex-end;
+}
+
+}
